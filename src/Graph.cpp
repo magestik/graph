@@ -400,6 +400,25 @@ bool Graph::getEdgeFrom(Node * node, std::vector<Edge*> & outEdges) const
 }
 
 /**
+ * @brief Graph::hasEdge
+ * @param from
+ * @param to
+ * @return
+ */
+bool Graph::hasEdge(Node * from, Node * to) const
+{
+	for (Edge * edge : edges)
+	{
+		if (edge->getSource() == from && edge->getTarget() == to)
+		{
+			return true;
+		}
+	}
+
+	return false;
+}
+
+/**
  * @brief Graph::setDirected
  * @param bDirected
  */

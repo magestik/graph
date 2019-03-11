@@ -22,6 +22,7 @@ public:
 	Node * findNode(const std::string & id);
 	bool getEdgeTo(Node * node, std::vector<Edge*> & outEdges) const;
 	bool getEdgeFrom(Node * node, std::vector<Edge*> & outEdges) const;
+	bool hasEdge(Node * from, Node * to) const;
 
 	//
 	// Setters
