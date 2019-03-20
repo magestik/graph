@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
 find_package(jansson CONFIG)
-if (JANSSON_FOUND)
+if (TARGET jansson)
     set(JANSSON_LIBRARY jansson)
 else()
     find_library(JANSSON_LIBRARY jansson REQUIRED)
