@@ -1,6 +1,11 @@
 cmake_minimum_required(VERSION 3.1)
 
-find_library(JANSSON_LIBRARY jansson)
+find_package(jansson CONFIG)
+if (JANSSON_FOUND)
+    set(JANSSON_LIBRARY jansson)
+else()
+    find_library(JANSSON_LIBRARY jansson REQUIRED)
+endif()
 
 add_library(Graph Graph.cpp Graph.h Node.cpp Node.h Edge.cpp Edge.h MetaDataContainer.cpp MetaDataContainer.h)
 
